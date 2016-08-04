@@ -1,0 +1,24 @@
+{
+  "name": "teamamericanostats",
+  "version": "0.0.1",
+  "description": "Statistics System",
+  "main": "server.js",
+  "author": "TeamAmericano",
+  "license": "MIT",
+  "dependencies": {
+    "connect": "^3.4.1",
+    "serve-static": "^1.11.1"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-Americano-2016/Team-Americano-2016-Project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Team-Americano-2016/Team-Americano-2016-Project/issues"
+  },
+  "homepage": "https://github.com/Team-Americano-2016/Team-Americano-2016-Project#readme"
+}
