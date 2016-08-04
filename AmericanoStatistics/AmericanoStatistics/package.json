@@ -6,6 +6,7 @@
   "author": "TeamAmericano",
   "license": "MIT",
   "dependencies": {
+    "chart.js": "^2.2.1",
     "connect": "^3.4.1",
     "serve-static": "^1.11.1"
   },
