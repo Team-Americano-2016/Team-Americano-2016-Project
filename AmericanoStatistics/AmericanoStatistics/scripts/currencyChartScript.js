@@ -5,29 +5,46 @@ function createChart() {
     require(['../scripts/libs/chartjs/chart.js'], function (Chart) {
         let ctx = document.getElementById("myChart"),
             myChart = new Chart(ctx, {
-                type: 'bar',
+                type: 'line',
                 data: {
                     labels: [currencyData.dataset.data[0][0], currencyData.dataset.data[1][0], currencyData.dataset.data[2][0], currencyData.dataset.data[3][0], currencyData.dataset.data[4][0], currencyData.dataset.data[5][0]],
                     datasets: [{
-                        label: '# of Votes',
+                        label: 'Exchange rates for the Lithuanian Lita (LTL) to US Dollars (USD)',
                         data: [currencyData.dataset.data[0][1], currencyData.dataset.data[1][1], currencyData.dataset.data[2][1], currencyData.dataset.data[3][1], currencyData.dataset.data[4][1], currencyData.dataset.data[5][1]],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255,99,132,1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
+                        fill: false,
+                        lineTension: 0.1,
+                        borderDash: [],
+                        borderDashOffset: 0.0,
+                        borderJoinStyle: 'miter',
+                        pointBorderColor: "rgba(75,192,192,1)",
+                        pointBackgroundColor: "#fff",
+                        pointBorderWidth: 1,
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                        pointHoverBorderColor: "rgba(220,220,220,1)",
+                        pointHoverBorderWidth: 2,
+                        pointRadius: 3,
+                        pointHitRadius: 10,
+                        backgroundColor: "rgba(75,192,192,0.4)",
+                        borderColor: "rgba(75,192,192,1)",
+                        // backgroundColor: [
+                        //     'rgba(255, 99, 132, 0.2)',
+                        //     // 'rgba(54, 162, 235, 0.2)',
+                        //     // 'rgba(255, 206, 86, 0.2)',
+                        //     // 'rgba(75, 192, 192, 0.2)',
+                        //     // 'rgba(153, 102, 255, 0.2)',
+                        //     // 'rgba(255, 159, 64, 0.2)'
+                        // ],
+                        // borderColor: [
+                        //     'rgba(255,99,132,1)',
+                        //     // 'rgba(54, 162, 235, 1)',
+                        //     // 'rgba(255, 206, 86, 1)',
+                        //     // 'rgba(75, 192, 192, 1)',
+                        //     // 'rgba(153, 102, 255, 1)',
+                        //     // 'rgba(255, 159, 64, 1)'
+                        // ],
+                        borderWidth: 1,
+                        spanGaps: false,
                     }]
                 },
                 options: {
