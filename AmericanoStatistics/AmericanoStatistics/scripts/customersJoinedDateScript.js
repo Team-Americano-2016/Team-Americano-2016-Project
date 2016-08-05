@@ -45,7 +45,7 @@ var data={"Customers":[{"Id":"ALFKI","CompanyName":"Alfreds Futterkiste","Contac
 var $ul=$('.nav');
 var $li=$('<li />');
 var $btn=$('<a />');
-$btn.addClass('teammembers');
+$btn.addClass('CustomersButton');
 $btn.html('Show Customers Full Name');
 $btn.appendTo($li);
 $li.appendTo($ul);
@@ -57,7 +57,7 @@ $btn.on('click',function(){
     var $Pwrapper=$('<div />');
     $Pwrapper.addClass('Pwrapper');
     if($btnIsTogled){
-        $btn.html('Hide Team Members Names');
+        $btn.html('Hide Customers Full Name');
         data.Customers.forEach(function (member) {
             var $p=$('<p />');
             $p.html(member.ContactName);
@@ -67,7 +67,7 @@ $btn.on('click',function(){
         });
         showGraphics();  //TODO optimize graphics based on some customers propertys!
     }else{
-        $btn.html('Show Team Members Names');
+        $btn.html('Show Customers Full Name');
         $('.Pwrapper').html('');
 
     }
