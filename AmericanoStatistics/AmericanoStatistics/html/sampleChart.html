@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CurrencyChart</title>
+    <link href="../scripts/libs/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../scripts/libs/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="html/OurCustomers.html">Our Customers</a></li>
+                <li><a href="html/sampleChart.html">SampleChart</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container body-content">
+    <div class="jumbotron text-center customerlist">
+        <h2>Our Customers</h2>
+    </div>
+    <div class="jumbotron text-center">
+        <h3>Sample chart</h3>
+        <div class="row" id="char-container">
+            <canvas id="myChart" width="400" height="250"></canvas>
+        </div>
+    </div>
+    <footer>
+        <p>© 2016 Team Americano Application</p>
+    </footer>
+</div>
+<script src="../scripts/libs/jquery-3.1.0.js"></script>
+<script src="../scripts/libs/require.js"></script>
+<script src="../scripts/customersJoinedDateScript.js"></script>
+</body>
+</html>
