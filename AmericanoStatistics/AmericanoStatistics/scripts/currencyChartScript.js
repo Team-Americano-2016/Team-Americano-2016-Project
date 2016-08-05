@@ -1,11 +1,12 @@
 /**
  * Created by KaloyanIT on 8/5/2016.
  */
-function createLineChart() {
+function createChart(type) {
+    var currentType = type.toString();
         require(['../scripts/libs/chartjs/chart.js'], function (Chart) {
             let ctx = document.getElementById("myChart"),
                 myChart = new Chart(ctx, {
-                    type: 'line',
+                    type: currentType,
                     data: {
                         labels: [currencyData.dataset.data[0][0], currencyData.dataset.data[1][0], currencyData.dataset.data[2][0], currencyData.dataset.data[3][0], currencyData.dataset.data[4][0], currencyData.dataset.data[5][0]],
                         datasets: [{
@@ -11661,7 +11662,5 @@ function createLineChart() {
         }
     };
 
-createLineChart();
-
-$('btn').on('click', function () {
-    });
+createChart('line');
+//TODO: add a button which change the chart type
