@@ -1,8 +1,10 @@
 // under maintanance of IliyanGogogv
 function showGraphics (params){
     require(['../scripts/libs/chartjs/chart.js'], function (Chart) {
-        let ctx = document.getElementById("myChart"),
-            myChart = new Chart(ctx, {
+        var $canvasContainer=$('#char-container').html('');  //clears the previous canvas
+        $('<canvas id="myChart" width="400" height="250" />').appendTo($canvasContainer); //creates a new (clear) canvas
+        let ctx = document.getElementById("myChart");
+           let myChart = new Chart(ctx, {
                 type: 'pie',
                 data: {
                     labels:(params==="country")
@@ -94,13 +96,14 @@ var $countryButton=$('<button />');
 var $positionButton=$('<button />');
 $countryButton.html('Show Graphics for Countrys');
 $positionButton.html('Show Graphics for Customers Positions');
+var $inputLabel=$('<label />');
+$inputLabel.html('Search Customer By Name :');
 var $btnIsTogled=false;
 
 $showButton.on('click',function(){
     $btnIsTogled=!($btnIsTogled);
     var $target=$('.customerlist');
     var $Pwrapper=$('<div />');
-
     $Pwrapper.addClass('Pwrapper');
     if($btnIsTogled){
         $showButton.html('Hide Customers Full Name');
@@ -115,10 +118,12 @@ $showButton.on('click',function(){
         $countryButton.appendTo($Pwrapper);
         $positionButton.appendTo($Pwrapper);
         $('#char-container').show();
+
         $countryButton.on('click',function(){
             showGraphics("country");
         })
         $positionButton.on('click',function(){
+
             showGraphics('position');
         })
     }else{
