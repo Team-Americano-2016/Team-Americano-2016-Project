@@ -1,13 +1,18 @@
-function showGraphics (){
+function showGraphics (params){
     require(['../scripts/libs/chartjs/chart.js'], function (Chart) {
         let ctx = document.getElementById("myChart"),
             myChart = new Chart(ctx, {
                 type: 'pie',
                 data: {
-                    labels: ["UK", "Germany", "France", "Finland", "Brazil", "Mexico"],
+                    labels:(params==="country")
+                        ?  ["UK", "Germany", "France", "Finland", "Brazil", "Mexico"]
+                        :["Owner", "Sales Manager", "Sales Agent", "Sales Representative", "Marketing Manager", "Accounting Manager"],
                     datasets: [{
                         label: 'Customers countrys',
-                        data: [countrysCount.UK, countrysCount.Germany, countrysCount.France, countrysCount.Finland, countrysCount.Brazil, countrysCount.Mexico],
+
+                        data:(params==="country")
+                            ? [countrysCount.UK, countrysCount.Germany, countrysCount.France, countrysCount.Finland, countrysCount.Brazil, countrysCount.Mexico]
+                            :[positionsCount.Owner, positionsCount.SalesManager, positionsCount.SalesAgent, positionsCount.SalesRepresentative, positionsCount.MarketingManager, positionsCount.AccountingManager],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -53,31 +58,51 @@ var countrysCount={
     "Mexico":0
 };
 
-for(let country of data.Customers ){
-    if(country.Country==="UK"){countrysCount.UK+=1}
-    if(country.Country==="Germany"){countrysCount.Germany+=1}
-    if(country.Country==="France"){countrysCount.France+=1}
-    if(country.Country==="Finland"){countrysCount.Finland+=1}
-    if(country.Country==="Brazil"){countrysCount.Brazil+=1}
-    if(country.Country==="Mexico"){countrysCount.Mexico+=1}
+var positionsCount={
+    "Owner":0,
+    "SalesManager":0,
+    "SalesAgent":0,
+    "SalesRepresentative":0,
+    "MarketingManager":0,
+    "AccountingManager":0,
+}
+
+for(let property of data.Customers ){
+    if(property.ContactTitle==="Owner"){positionsCount.Owner+=1}
+    if(property.ContactTitle==="Sales Manager"){positionsCount.SalesManager+=1}
+    if(property.ContactTitle==="Sales Agent"){positionsCount.SalesAgent+=1}
+    if(property.ContactTitle==="Sales Representative"){positionsCount.SalesRepresentative+=1}
+    if(property.ContactTitle==="Marketing Manager"){positionsCount.MarketingManager+=1}
+    if(property.ContactTitle==="Accounting Manager"){positionsCount.AccountingManager+=1}
+    if(property.Country==="UK"){countrysCount.UK+=1}
+    if(property.Country==="Germany"){countrysCount.Germany+=1}
+    if(property.Country==="France"){countrysCount.France+=1}
+    if(property.Country==="Finland"){countrysCount.Finland+=1}
+    if(property.Country==="Brazil"){countrysCount.Brazil+=1}
+    if(property.Country==="Mexico"){countrysCount.Mexico+=1}
 }
 
 var $ul=$('.nav');
 var $li=$('<li />');
-var $btn=$('<a />');
-$btn.addClass('CustomersButton');
-$btn.html('Show Customers');
-$btn.appendTo($li);
+var $showButton=$('<a />');
+$showButton.addClass('CustomersButton');
+$showButton.html('Show Customers');
+$showButton.appendTo($li);
 $li.appendTo($ul);
+var $countryButton=$('<button />');
+var $positionButton=$('<button />');
+$countryButton.html('Show Graphics for Countrys');
+$positionButton.html('Show Graphics for Customers Positions');
 var $btnIsTogled=false;
 
-$btn.on('click',function(){
+$showButton.on('click',function(){
     $btnIsTogled=!($btnIsTogled);
     var $target=$('.customerlist');
     var $Pwrapper=$('<div />');
+
     $Pwrapper.addClass('Pwrapper');
     if($btnIsTogled){
-        $btn.html('Hide Customers Full Name');
+        $showButton.html('Hide Customers Full Name');
         data.Customers.forEach(function (member) {
             var $p=$('<a />');
             $p.html(member.ContactName+', ');
@@ -85,13 +110,23 @@ $btn.on('click',function(){
             $p.appendTo($Pwrapper);
             $Pwrapper.appendTo($target);
         });
+        $('<br />').appendTo($Pwrapper);
+        $countryButton.appendTo($Pwrapper);
+        $positionButton.appendTo($Pwrapper);
         $('#char-container').show();
-        showGraphics();  //TODO optimize graphics based on some customers propertys!
     }else{
-        $btn.html('Show Customers Full Name');
+        $showButton.html('Show Customers Full Name');
         $('.Pwrapper').html('');
         $('#char-container').hide();
     }
-
 });
+
+$countryButton.on('click',function(){
+    showGraphics("country");
+})
+$positionButton.on('click',function(){
+    showGraphics('position');
+})
+
+
 
