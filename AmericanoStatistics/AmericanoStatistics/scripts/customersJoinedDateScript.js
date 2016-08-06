@@ -1,3 +1,4 @@
+// under maintanance of IliyanGogogv
 function showGraphics (params){
     require(['../scripts/libs/chartjs/chart.js'], function (Chart) {
         let ctx = document.getElementById("myChart"),
@@ -114,6 +115,12 @@ $showButton.on('click',function(){
         $countryButton.appendTo($Pwrapper);
         $positionButton.appendTo($Pwrapper);
         $('#char-container').show();
+        $countryButton.on('click',function(){
+            showGraphics("country");
+        })
+        $positionButton.on('click',function(){
+            showGraphics('position');
+        })
     }else{
         $showButton.html('Show Customers Full Name');
         $('.Pwrapper').html('');
@@ -121,12 +128,7 @@ $showButton.on('click',function(){
     }
 });
 
-$countryButton.on('click',function(){
-    showGraphics("country");
-})
-$positionButton.on('click',function(){
-    showGraphics('position');
-})
+
 
 
 
