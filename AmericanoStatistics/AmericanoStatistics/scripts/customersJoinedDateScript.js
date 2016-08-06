@@ -86,12 +86,15 @@ for(let property of data.Customers ){
 }
 
 var $ul=$('.nav');
-var $li=$('<li />');
+var $showButtonli=$('<li />');
 var $showButton=$('<a />');
 $showButton.addClass('CustomersButton');
 $showButton.html('Show Customers');
-$showButton.appendTo($li);
-$li.appendTo($ul);
+var $searchLabel=$('<label />');
+$searchLabel.html('Search Customer By Name :');
+var $searchInput=$('<input type="text" />');
+$showButton.appendTo($showButtonli);
+$showButtonli.appendTo($ul);
 var $countryButton=$('<button />');
 var $positionButton=$('<button />');
 $countryButton.html('Show Graphics for Countrys');
@@ -101,12 +104,18 @@ $inputLabel.html('Search Customer By Name :');
 var $btnIsTogled=false;
 
 $showButton.on('click',function(){
+
     $btnIsTogled=!($btnIsTogled);
     var $target=$('.customerlist');
     var $Pwrapper=$('<div />');
     $Pwrapper.addClass('Pwrapper');
+
     if($btnIsTogled){
         $showButton.html('Hide Customers Full Name');
+        $searchLabel.appendTo($Pwrapper);
+        $searchInput.appendTo($Pwrapper);
+        $('<br />').appendTo($Pwrapper);
+
         data.Customers.forEach(function (member) {
             var $p=$('<a />');
             $p.html(member.ContactName+', ');
@@ -114,6 +123,7 @@ $showButton.on('click',function(){
             $p.appendTo($Pwrapper);
             $Pwrapper.appendTo($target);
         });
+
         $('<br />').appendTo($Pwrapper);
         $countryButton.appendTo($Pwrapper);
         $positionButton.appendTo($Pwrapper);
@@ -126,12 +136,27 @@ $showButton.on('click',function(){
 
             showGraphics('position');
         })
+        $searchInput.on('input',showPattern);
     }else{
         $showButton.html('Show Customers Full Name');
         $('.Pwrapper').html('');
         $('#char-container').hide();
     }
 });
+
+function showPattern() {
+
+    var pattern=$searchInput.val();
+    var $wrapper=$('.generated');
+   for(let a of $wrapper ){
+      // console.log(pattern)
+       if(a.innerHTML.toLowerCase().indexOf(pattern.toLowerCase())<0){
+           a.style.display='none';
+       }else{
+           a.style.display='';
+       }
+   }
+}
 
 
 
