@@ -5,7 +5,7 @@ function showGraphics (params){
         $('<canvas id="myChart" width="400" height="250" />').appendTo($canvasContainer); //creates a new (clear) canvas
         let ctx = document.getElementById("myChart");
            let myChart = new Chart(ctx, {
-                type: 'pie',
+                type: graphicsType,
                 data: {
                     labels:(params==="country")
                         ?  ["UK", "Germany", "France", "Finland", "Brazil", "Mexico"]
@@ -97,11 +97,15 @@ $showButton.appendTo($showButtonli);
 $showButtonli.appendTo($ul);
 var $countryButton=$('<button />');
 var $positionButton=$('<button />');
+var $switchButton=$('<button />');
+$switchButton.html('Switch Graphics Type');
 $countryButton.html('Show Graphics for Countrys');
 $positionButton.html('Show Graphics for Customers Positions');
 var $inputLabel=$('<label />');
 $inputLabel.html('Search Customer By Name :');
 var $btnIsTogled=false;
+var graphicsType='pie';
+var graphicsTypeCounter=0;
 
 $showButton.on('click',function(){
 
@@ -115,6 +119,7 @@ $showButton.on('click',function(){
         $searchLabel.appendTo($Pwrapper);
         $searchInput.appendTo($Pwrapper);
         $('<br />').appendTo($Pwrapper);
+        $('<br />').appendTo($Pwrapper);
 
         data.Customers.forEach(function (member) {
             var $p=$('<a />');
@@ -125,8 +130,11 @@ $showButton.on('click',function(){
         });
 
         $('<br />').appendTo($Pwrapper);
+        $('<br />').appendTo($Pwrapper);
         $countryButton.appendTo($Pwrapper);
         $positionButton.appendTo($Pwrapper);
+        $switchButton.appendTo($Pwrapper);
+
         $('#char-container').show();
 
         $countryButton.on('click',function(){
@@ -137,6 +145,7 @@ $showButton.on('click',function(){
             showGraphics('position');
         })
         $searchInput.on('input',showPattern);
+        $switchButton.on('click',switchGraphics);
     }else{
         $showButton.html('Show Customers Full Name');
         $('.Pwrapper').html('');
@@ -156,6 +165,40 @@ function showPattern() {
            a.style.display='';
        }
    }
+}
+
+function switchGraphics() {
+
+    switch (graphicsTypeCounter){
+        case 0:
+            graphicsType='line';
+            showGraphics();
+            break;
+        case 1:
+            graphicsType='bar';
+            showGraphics();
+            break;
+        case 2:
+            graphicsType='doughnut';
+            showGraphics();
+            break;
+        case 3:
+            graphicsType='radar';
+            showGraphics();
+            break;
+        case 4:
+            graphicsType='horizontalBar';
+            showGraphics();
+            break;
+        case 5:
+            graphicsType='pie';
+            showGraphics();
+            break;
+    }
+    graphicsTypeCounter+=1;
+    if(graphicsTypeCounter>5){
+        graphicsTypeCounter=0;
+    }
 }
 
 
