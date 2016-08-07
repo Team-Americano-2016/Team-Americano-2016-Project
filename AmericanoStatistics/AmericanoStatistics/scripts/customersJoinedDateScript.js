@@ -11,7 +11,9 @@ function showGraphics (params){
                         ?  ["UK", "Germany", "France", "Finland", "Brazil", "Mexico"]
                         :["Owner", "Sales Manager", "Sales Agent", "Sales Representative", "Marketing Manager", "Accounting Manager"],
                     datasets: [{
-                        label: 'Customers countrys',
+                        label:(params==="country")
+                            ? 'Customers countrys'
+                            :'Customers Position',
 
                         data:(params==="country")
                             ? [countrysCount.UK, countrysCount.Germany, countrysCount.France, countrysCount.Finland, countrysCount.Brazil, countrysCount.Mexico]
