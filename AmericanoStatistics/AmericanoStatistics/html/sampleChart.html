@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>LTL/USD Change rate</title>
-    <link href="../scripts/libs/bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="../scripts/libs/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../scripts/libs/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="../scripts/libs/bootstrap/css/bootstrap-theme.css" rel="stylesheet"/>
 
 </head>
 <body>
@@ -14,6 +14,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="sampleChart.html">LTL/USD Change rate</a></li>
+                <li><a href="about.html">About us</a></li>
             </ul>
         </div>
     </div>
@@ -24,6 +25,11 @@
     </div>
     <div class="jumbotron text-center" id="btndiv">
         <h3>Graphics</h3>
+        <div class="chartType">
+            <a href="#" id="line-ch"><img src="../images/line-ch.png" alt="line-chart"></a>
+            <a href="#" id="bar-ch"><img src="../images/bar-ch.png" alt="bar-chart"></a>
+            <a href="#" id="polar-ch"><img src="../images/radar-ch.png" alt="polar-chart"></a>
+        </div>
         <div class="row" id="char-container">
             <canvas id="myChart" width="400" height="250"></canvas>
         </div>

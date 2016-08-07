@@ -64,6 +64,29 @@ function createChart(type) {
     }
 
 
+
+
+
+
+
+	//chart type change - added by Ivaylo Iliev; TODO: needs a bug fix for proper visualuzation of the chart
+var lineChart = document.getElementById("line-ch"),
+    barChart = document.getElementById("bar-ch"),
+    polarChart = document.getElementById("polar-ch");
+
+lineChart.addEventListener("click", function () {
+    createChart('line');
+}, false);
+
+barChart.addEventListener("click", function () {
+    createChart('bar');
+}, false);
+
+polarChart.addEventListener("click", function () {
+    createChart('polarArea');
+}, false);
+	//end of chart type change
+
     var currencyData = {
         "dataset": {
             "id": 9679683,
