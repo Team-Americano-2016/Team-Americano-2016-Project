@@ -3,7 +3,7 @@
  * Work in progress
  */
 
-function createChart(type) {
+/*function createChart(type) {
     var currentType = type.toString();
     require(['../scripts/libs/chartjs/chart.js'], function (Chart) {
         var $canvasContainer=$('#char-container').html('');  //clears the previous canvas
@@ -25,4 +25,4 @@ function createChart(type) {
     });
 
 }
-createChart('box');
+createChart('box');*/
