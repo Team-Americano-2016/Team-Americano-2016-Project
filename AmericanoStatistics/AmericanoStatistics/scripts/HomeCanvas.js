@@ -2,11 +2,11 @@ var myCanvas = document.querySelector('#myCanvas');
 var context = myCanvas.getContext('2d');
 var width=myCanvas.width;
 var height=myCanvas.height;
-var radius = 40;
+var radius = 20;
 var x = radius+1;
-var y = radius+1;
-var dx = 3;
-var dy = 0;
+var y = 0;
+var dx = 0;
+var dy =2;
 
 var image;
 image = new Image();
@@ -14,7 +14,7 @@ image.src = 'scripts/images/dollar.png';
 var dollars=[];
 function makeDollar() {
     var dollar = {
-        'x': x,
+        'x': Math.random() * (width - radius) + radius,
         'y': y,
         'dx': dx,
         'dy': dy,
@@ -24,12 +24,7 @@ function makeDollar() {
     dollars.push(dollar);
 }
 
-for(let i=0;i<6;i+=1){
-    makeDollar()
-    x+=radius*2;
-    y+=radius*2;
-}
-
+window.setInterval('makeDollar()',300);
 
 /*myCanvasContainer.addEventListener('click', function (ev) {
     var newDollarX = ev.clientX;
@@ -64,7 +59,7 @@ function draw(dollar) {
 
 function move(dollar) {
     if (dollar.x <= radius || dollar.x >= width - radius) dollar.dx = -dollar.dx;
-    if (dollar.y <= radius || dollar.y >= height - radius) dollar.dy = -dollar.dy;
+   // if (dollar.y <= radius || dollar.y >= height - radius) dollar.dy = -dollar.dy;
    /* for( var other of dollars){
 
         if(isDollarCollidingWith(dollar,other)){
