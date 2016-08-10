@@ -97,9 +97,9 @@ $searchLabel.html('Search Customer By Name :');
 var $searchInput=$('<input type="text" />');
 $showButton.appendTo($showButtonli);
 $showButtonli.appendTo($ul);
-var $countryButton=$('<button />');
-var $positionButton=$('<button />');
-var $switchButton=$('<button />');
+var $countryButton=$('<button />').addClass('btn');
+var $positionButton=$('<button />').addClass('btn');
+var $switchButton=$('<button />').addClass('btn');
 $switchButton.html('Switch Graphics Type');
 $countryButton.html('Show Graphics for Countrys');
 $positionButton.html('Show Graphics for Customers Positions');
@@ -110,7 +110,7 @@ var graphicsType='pie';
 var graphicsTypeCounter=0;
 
 $showButton.on('click',function(){
-
+    $searchInput.val('');
     $btnIsTogled=!($btnIsTogled);
     var $target=$('.customerlist');
     var $Pwrapper=$('<div />');
@@ -156,7 +156,6 @@ $showButton.on('click',function(){
 });
 
 function showPattern() {
-
     var pattern=$searchInput.val();
     var $wrapper=$('.generated');
    for(let a of $wrapper ){
@@ -167,6 +166,7 @@ function showPattern() {
            a.style.display='';
        }
    }
+
 }
 
 function switchGraphics() {
