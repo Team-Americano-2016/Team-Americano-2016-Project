@@ -10,10 +10,10 @@ function createChart(type) {
                 myChart = new Chart(ctx, {
                     type: currentType,
                     data: {
-                        labels: [currencyData.dataset.data[0][0], currencyData.dataset.data[1][0], currencyData.dataset.data[2][0], currencyData.dataset.data[3][0], currencyData.dataset.data[4][0], currencyData.dataset.data[5][0]],
+                        labels: [bitCoinData.dataset.data[0][0], bitCoinData.dataset.data[1][0], bitCoinData.dataset.data[2][0], bitCoinData.dataset.data[3][0], bitCoinData.dataset.data[4][0], bitCoinData.dataset.data[5][0]],
                         datasets: [{
                             label: 'Exchange rates for the Lithuanian Lita (LTL) to US Dollars (USD)',
-                            data: [currencyData.dataset.data[0][1], currencyData.dataset.data[1][1], currencyData.dataset.data[2][1], currencyData.dataset.data[3][1], currencyData.dataset.data[4][1], currencyData.dataset.data[5][1]],
+                            data: [bitCoinData.dataset.data[0][1], bitCoinData.dataset.data[1][1], bitCoinData.dataset.data[2][1], bitCoinData.dataset.data[3][1], bitCoinData.dataset.data[4][1], bitCoinData.dataset.data[5][1]],
                             fill: false,
                             lineTension: 0.1,
                             borderDash: [],
@@ -89,7 +89,7 @@ polarChart.addEventListener("click", function () {
 }, false);
 	//end of chart type change
 
-    var currencyData = {
+    var bitCoinData = {
         "dataset": {
             "id": 9679683,
             "dataset_code": "XUDLBK38",
@@ -11687,5 +11687,13 @@ polarChart.addEventListener("click", function () {
         }
     };
 
+
+
 createChart('line');
+var bitCoinData;
+$.getJSON("https://www.quandl.com/api/v3/datasets/BCHAIN/MWNUS.json?api_key=wMBMxVtkiGybBVFTHx2q", function (dataNew) {
+    bitCoinData = dataNew;
+    return bitCoinData;
+});
+
 //TODO: add a button which change the chart type
