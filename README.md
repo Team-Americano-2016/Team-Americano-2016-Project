@@ -1,4 +1,4 @@
-##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Presentation Slides](www.google.com)
+##### [<img src="https://raw.githubusercontent.com/TelerikAcademy/Common/master/icons/presentation.png" height="18"/>Presentation Slides](https://rawgit.com/Team-Americano-2016/Team-Americano-2016-Project/master/AmericanoStatistics/AmericanoStatistics/TeamworkDemo/index.html)
 # Team-Americano-2016-Project
 
 This document describes the teamwork assignment for Telerik Academy students in JavaScript UI & DOM course
