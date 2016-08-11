@@ -6,7 +6,8 @@
 //     bitCoinData = dataNew;
 //     return bitCoinData;
 // });
-
+var chartType = 'line';
+var chartDays = 5;
 
 //TODO: make up the labels of different charts!!!!!
 function createChart(type, days) {
@@ -91,22 +92,55 @@ var bitCoinData = {"dataset":{"id":7692482,"dataset_code":"MWNUS","database_code
 //chart type change - added by Ivaylo Iliev; TODO: needs a bug fix for proper visualuzation of the chart
 var lineChart = document.getElementById("line-ch"),
     barChart = document.getElementById("bar-ch"),
-    polarChart = document.getElementById("polar-ch");
+    polarChart = document.getElementById("polar-ch"),
+    days3 = document.getElementById("3days"),
+    days7 = document.getElementById("7days"),
+    days14 = document.getElementById("14days"),
+    days30 = document.getElementById("30days"),
+    days60 = document.getElementById("60days");
 
 lineChart.addEventListener("click", function () {
-    createChart('line', 20);
+    chartType = 'line';
+    createChart(chartType, chartDays);
 }, false);
 
 barChart.addEventListener("click", function () {
-    createChart('bar', 20);
+    chartType = 'bar';
+    createChart(chartType, chartDays);
 }, false);
 
 polarChart.addEventListener("click", function () {
-    createChart('polarArea', 20);
+    chartType = 'polarArea';
+    createChart(chartType, chartDays);
 }, false);
 //end of chart type change
+days3.addEventListener("click", function () {
+    chartDays = 3;
+    createChart(chartType, chartDays);
+}, false);
 
-createChart('line', 20);
+days7.addEventListener("click", function () {
+    chartDays = 7;
+    createChart(chartType, chartDays);
+}, false);
+
+days14.addEventListener("click", function () {
+    chartDays = 14;
+    createChart(chartType, chartDays);
+}, false);
+
+days30.addEventListener("click", function () {
+    chartDays = 30;
+    createChart(chartType, chartDays);
+}, false);
+
+days60.addEventListener("click", function () {
+    chartDays = 60;
+    createChart(chartType, chartDays);
+}, false);
+
+
+createChart(chartType, chartDays);
 
 
 //TODO: add a button which change the chart type
