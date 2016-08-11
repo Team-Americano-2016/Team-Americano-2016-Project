@@ -42,7 +42,7 @@ function createChart(type) {
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero: true
+                                beginAtZero: false
                             }
                         }]
                     }
