@@ -96,6 +96,7 @@ Here you can find a list of our team members.
 <!-- section start -->
 <!-- attr: { showInPresentation:true, style:'font-size: 0.7em', hasScriptWrapper:true } -->
 
-#Home Section
+# Home Section
 
 Here we use pure canvas to make some animations "flying dollars"
+
