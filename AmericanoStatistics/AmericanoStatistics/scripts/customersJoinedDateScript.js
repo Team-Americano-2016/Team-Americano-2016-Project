@@ -38,13 +38,7 @@ function showGraphics (params){
                     }]
                 },
                 options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
+                    
                 }
             });
     });

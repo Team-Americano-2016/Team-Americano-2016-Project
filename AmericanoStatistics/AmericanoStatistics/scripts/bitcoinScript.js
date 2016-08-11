@@ -72,7 +72,7 @@ function createChart(type, days) {
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero: true
+                                beginAtZero: false
                             }
                         }]
                     }
