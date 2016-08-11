@@ -9,10 +9,14 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+.unique{
+  background-image: url("../../../../images/dollars.png");
+  background-size: 1140px 900px;
+}
 body {
   margin: 0;
-  background-image: url("../../../../images/dolar-background.jpg");
-  background-size: 1140px 800px;
+ /* background-image: url("../../../../images/dolar-background.jpg");
+  background-size: 1140px 800px;*/
   background-repeat:no-repeat;
   background-position: top;
 }
