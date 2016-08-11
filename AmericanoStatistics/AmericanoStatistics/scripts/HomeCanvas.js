@@ -47,6 +47,9 @@ function run() {
     for(d of dollars) {
         draw(d);
         move(d);
+        if(dollars.length>30){
+            dollars.splice(0,1); //removes not necessary elements and keeps memory low
+        }
     }
     window.requestAnimationFrame(run);
 }
