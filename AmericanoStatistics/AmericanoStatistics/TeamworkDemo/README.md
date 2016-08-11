@@ -32,7 +32,7 @@
 
 <!-- ![](./imgs/githubgraphics.png) -->
 
-<!-- <img showInPresentation="true" class="slide-image" src="imgs/githubgraphics.png" style="top:25%; left:10%; width:80%; z-index:-1" /> -->
+<!-- <img showInPresentation="true" class="slide-image" src="imgs/githubGraphics.png" style="top:25%; left:10%; width:80%; z-index:-1" /> -->
 
 
 <!-- section start -->
@@ -41,10 +41,11 @@
 # Currency graphics drawing
    
 What we do is reading data from json file.  
-- we take the currency rates changes from this file for a certan period of time  
-- we draw chartjs graphics based on this number changes  
-- as additional functionality we made the option to switch graphic's type by clicking corresonding icon   
-<!-- section start -->
+ - we take the currency rates changes from this file for a certain period of time  
+ - we draw chartJS graphics based on this changes  
+ - as additional functionality we made the option to switch graphic's type by clicking corresponding icon
+ 
+ <!-- section start -->
 <!-- attr: { showInPresentation:true, style:'font-size: 0.7em', hasScriptWrapper:true } -->
 
 # Currency graphics Screenshot
@@ -59,12 +60,12 @@ What we do is reading data from json file.
 # Customers Section
 
 What we do is reading data from json file.  
-- we take some customer details from this file  
-- we draw chartjs graphics based on this personal details  
-- as addition we made the option to switch graphic's type by clickin a button   
-- as addition we made the option to search customer by name in our json customer's file   
-- we have option to show customers count by customers's Country  
-- we have option to show customers count by customer's Position held in his company  
+- we take some customer's details from this file  
+- we draw chartJS graphics based on this person's details  
+- as addition we made the option to switch graphic's type by clicking a button   
+- as addition we made the option to filter customer by name in our json customer's file   
+- we have option to show graphics based on customers Country's count  
+- we have option to show graphics based on customers position's count   
 
 <!-- section start -->
 <!-- attr: { showInPresentation:true, style:'font-size: 0.7em', hasScriptWrapper:true } -->
@@ -81,7 +82,7 @@ What we do is reading data from json file.
 # About Us Section
 
 Here you can find a list of our team members.
-- we use javascript and bootstrap techiques to show our personal info
+- we use javascript and bootstrap to show our personal info in pretty way
 
 <!-- section start -->
 <!-- attr: { showInPresentation:true, style:'font-size: 0.7em', hasScriptWrapper:true } -->
@@ -92,4 +93,9 @@ Here you can find a list of our team members.
 
 <!-- <img showInPresentation="true" class="slide-image" src="imgs/aboutUs.png" style="top:15%; width:100%; z-index:-1" /> -->
 
+<!-- section start -->
+<!-- attr: { showInPresentation:true, style:'font-size: 0.7em', hasScriptWrapper:true } -->
 
+#Home Section
+
+Here we use pure canvas to make some animations "flying dollars"
